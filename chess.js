@@ -222,8 +222,8 @@ function redraw()
 
 let first_click;
 
-document.body.addEventListener("mousedown", (event)=>{
-
+function tap_handler(event)
+{
     const canvas_display_width = canvas.getClientRects()[0].width - 2; // remove border
     const canvas_display_height = canvas.getClientRects()[0].height - 2; // remove border
 
@@ -251,4 +251,7 @@ document.body.addEventListener("mousedown", (event)=>{
     }
 
     redraw();
-})
+}
+
+document.body.addEventListener("mousedown", tap_handler);
+document.body.addEventListener("touchdown", tap_handler);
