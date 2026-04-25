@@ -242,8 +242,11 @@ function tap_handler(event)
     }
     else
     {
-        board[selected_i] = board[first_click];
-        board[first_click] = P_BLANK;
+        if (board[first_click] != P_BLANK)
+        {
+            board[selected_i] = board[first_click];
+            board[first_click] = P_BLANK;
+        }
         first_click = undefined;
     }
 
