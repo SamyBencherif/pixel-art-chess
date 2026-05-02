@@ -242,7 +242,8 @@ function tap_handler(event)
     }
     else
     {
-        if (board[first_click] != P_BLANK)
+        const different_colors = (board[first_click] >> 3 ^ board[selected_i] >> 3);
+        if (board[first_click] != P_BLANK && different_colors)
         {
             board[selected_i] = board[first_click];
             board[first_click] = P_BLANK;
